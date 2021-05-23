@@ -29,17 +29,19 @@ export function Content({ genre, genreId }: ContentProps) {
   }, [genreId]);
 
   return (
-    <main>
-      <header>
-        <span className="category">Categoria:<span> {genre}</span></span>
-      </header>
+    <>
+      <main>
+        <header>
+          <span className="category">Categoria:<span> {genre}</span></span>
+        </header>
 
-      <div className="movies-list">
-        {movies.map(movie => (
-          <MovieCard key={movie.imdbID} title={movie.Title} poster={movie.Poster} runtime={movie.Runtime} rating={movie.Ratings[0].Value} />
-        ))}
-      </div>
-    </main>
+        <div className="movies-list">
+          {movies.map(movie => (
+            <MovieCard key={movie.imdbID} title={movie.Title} poster={movie.Poster} runtime={movie.Runtime} rating={movie.Ratings[0].Value} />
+          ))}
+        </div>
+      </main>
+    </>
   )
 
 }
